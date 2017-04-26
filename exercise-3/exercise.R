@@ -15,8 +15,9 @@ vehicle <- add_rownames(mtcars, var='car')
 BestGearsCyl <- functon(gears, cylinders) {
   ret <- vehicles %>%  
         filter(gear == gears, cyl == cylinders) %>% 
-        filter(mgp = max(mpg)) %>% 
+        filter(mpg == max(mpg)) %>% 
         select(car)
+  return(ret)
 }
 
 # Get the best mpg car for 6 cylinder cars with 4 gears
